@@ -64,11 +64,10 @@ function arrLoop()
         console.log(score[ctr] + " Failed") : console.log(score[ctr] + " Not recognised");
     }
 }
-
-//Question 6
 //Call arrLoop function
 arrLoop();
 
+//Question 6
 //Lambda (Arrow) function to determine students' Math & English Status
 var verify = (a, b)=> {
     math = a; eng = b;
