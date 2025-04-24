@@ -44,7 +44,10 @@ const drugs = [
 ];
 
 //Question 1
-let drugName = []; //To hold antibiotics 
+//Function to return antibiotic drugs
+function antibioticDrugs()
+{
+     let drugName = []; //To hold antibiotics 
 
 for(let a = 0; a < drugs.length; a++)
 {
@@ -65,18 +68,18 @@ let antibiotics = drugName.filter((x)=>
 });
 
 console.log("In the drugs array, the following are antibiotic drugs: " + antibiotics); //Output: Names of antibiotics in the drugs array
+}
+antibioticDrugs();  //Call to the function
 
 //Question 2
 //Function to return all drug names in lowercase 
+let b = 0;
 function changeCase()
 {
-     console.log("All drug names in lowercase letters are: ");
-     for (let b = 0; b < drugs.length; b++)
-     {
-          console.log(drugs[b].name.toLowerCase());
-     }
+     return drugs[b++].name.toLowerCase();
 }
-changeCase();
+const newDrugName = drugs.map(changeCase);
+console.log("All drug names in lowercase are " + newDrugName);
 
 //Question 3
 //Function to return all drugs in a category
@@ -100,15 +103,15 @@ function drugRequest(x)
 });
 
 (isDrug.length > 0) ? console.log("The requested drug category is " + x + ". The list of drugs under it are " + isDrug) :
-console.log("Invalid! Check the requesed drug category")
+console.log("Invalid input! Check the requesed drug category")
 }
 
-drugRequest("Antibiotic");
-drugRequest("Supplement");
-drugRequest("Analgesic");
-drugRequest("Antidiabetic");
-drugRequest("Antibiotics"); //Output: Invalid! Check the requesed drug category
-drugRequest("Antipsychotic"); //Output: Invalid! Check the requesed drug category
+drugRequest("Antibiotic");       //Shows all antibiotic drugs
+drugRequest("Supplement");       //Shows all supplements
+drugRequest("Analgesic");        //Shows all analgesics
+drugRequest("Antidiabetic");     //Shows all antidiabetic drugs
+drugRequest("Antihypertensive"); //Output: Invalid input! Check the requesed drug category
+drugRequest("Antipsychotic");    //Output: Invalid input! Check the requesed drug category
 
 //Question 4
 //Function to log each drug and it's manufacturer
@@ -118,13 +121,11 @@ function manufacturer()
      drugs.forEach(()=>
      {
           console.log("Drug name is " + drugs[d].name + " and the manufacturer is " + drugs[d].manufacturer);
-          
-     d += 1;
+          d += 1;
      }
-     )
+     );
 }
-
-manufacturer(); 
+manufacturer();   //Call to manufacturer function
 
 //Question 5
 //Function to show all drugs that require prescription 
@@ -142,8 +143,7 @@ function prescription()
      }
      )
 }
-
-prescription();
+prescription();  //Call to all prescription drugs
 
 //Question 6
 //Function to return new array of drugs
@@ -158,10 +158,9 @@ function newDrugs()
           f++;
      }
 );
-
     console.log(newArr);
 }
-newDrugs();
+newDrugs();  //Call to new drugs and their dosage
 
 //Question 7
 //Function to return all drugs with a stock less than 50
@@ -192,7 +191,7 @@ function nonPrescription()
      console.log("The following are non-prescription drugs in the list: ");
      drugs.forEach(()=>
      {
-          if(drugs[h].isPrescriptionOnly == false)
+          if(drugs[h].isPrescriptionOnly === false)
           {
                console.log(drugs[h].name)    //Show non-prescription drugs
           }
@@ -235,7 +234,7 @@ function analgesics()
      let ctr = 0;
      drugs.forEach(()=>
      {
-          if (drugs[ctr].category == "Analgesic")
+          if (drugs[ctr].category === "Analgesic")
           {
                counter++; //Count in each analgesic drug case
           } 
