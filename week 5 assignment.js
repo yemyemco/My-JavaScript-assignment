@@ -66,8 +66,6 @@ let antibiotics = drugName.filter((x)=>
 
 console.log("In the drugs array, the following are antibiotic drugs: " + antibiotics); //Output: Names of antibiotics in the drugs array
 
-
-
 //Question 2
 //Function to return all drug names in lowercase 
 function changeCase()
@@ -79,7 +77,6 @@ function changeCase()
      }
 }
 changeCase();
-
 
 //Question 3
 //Function to return all drugs in a category
@@ -106,15 +103,12 @@ function drugRequest(x)
 console.log("Invalid! Check the requesed drug category")
 }
 
-
 drugRequest("Antibiotic");
 drugRequest("Supplement");
 drugRequest("Analgesic");
 drugRequest("Antidiabetic");
 drugRequest("Antibiotics"); //Output: Invalid! Check the requesed drug category
 drugRequest("Antipsychotic"); //Output: Invalid! Check the requesed drug category
-
-
 
 //Question 4
 //Function to log each drug and it's manufacturer
@@ -131,8 +125,6 @@ function manufacturer()
 }
 
 manufacturer(); 
-
-
 
 //Question 5
 //Function to show all drugs that require prescription 
